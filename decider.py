@@ -31,7 +31,7 @@ for thisUser in users:
         else:
             h.write(thisUser)
     else:
-        print ("all dank in detroit")
+        print ("all good")
 f.close()
 g.close()
 h.close()
