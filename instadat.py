@@ -9,7 +9,7 @@ from pyvirtualdisplay import Display
 userdata = []
 user = []
 dank = []
-user.append('mohnd.mo')
+user.append('your_initial_user') # initial username
 userNumber = 1;
 g = open("users.txt", "a+")
 g.seek(0)
@@ -23,8 +23,8 @@ driver.get(url)
 driver.implicitly_wait(3)
 username = driver.find_element_by_name('username')
 password = driver.find_element_by_name('password')
-username.send_keys('developer321')
-password.send_keys('nikhilmihir')
+username.send_keys('your_username') # yourusername
+password.send_keys('your_password') # yourpassword
 driver.find_element_by_xpath("//button[contains(.,'Log in')]").click()
 element = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CLASS_NAME, "_9sg67")))
 
@@ -48,7 +48,7 @@ while (len(user) > 0):
         private[0].click()
     else:
         notPrivate = False;
-        #print ("bitch is private. fuck em")
+        #privateuser
 
     if notPrivate:
         g.write(currentUser + '\n')
@@ -60,12 +60,10 @@ while (len(user) > 0):
             f.write(d.text + '\n')
             print(d.text)
         if userNumber < 10:
-            # Wait for the followers modal to load
+            # Wait for loading
             xpath = "//div[@style='position: relative; z-index: 1;']/div/div[2]/div/div[1]"
             WebDriverWait(driver, 1).until(
                 EC.presence_of_element_located((By.XPATH, xpath)))
-
-            # http://stackoverflow.com/questions/38040300/scraping-instagram-followers-page-using-selenium-and-python
             # Finally, scrape the followers
             xpath = "//div[@style='position: relative; z-index: 1;']//ul/li/div/div/div/div/a"
             followers_elems = driver.find_elements_by_xpath(xpath)
@@ -98,7 +96,7 @@ while len(dank) > 0:
         private[0].click()
     else:
         notPrivate = False;
-        #print ("bitch is private. fuck em")
+        #private
 
     if notPrivate:
         g.write(currentUser + '\n')
@@ -110,13 +108,11 @@ while len(dank) > 0:
             f.write(d.text + '\n')
             print(d.text)
         if userNumber < 10:
-            # Wait for the followers modal to load
+            # Wait for load
             xpath = "//div[@style='position: relative; z-index: 1;']/div/div[2]/div/div[1]"
             WebDriverWait(driver, 1).until(
                 EC.presence_of_element_located((By.XPATH, xpath)))
-
-            # http://stackoverflow.com/questions/38040300/scraping-instagram-followers-page-using-selenium-and-python
-            # Finally, scrape the followers
+            #scrape the followers
             xpath = "//div[@style='position: relative; z-index: 1;']//ul/li/div/div/div/div/a"
             followers_elems = driver.find_elements_by_xpath(xpath)
             for e in followers_elems:
