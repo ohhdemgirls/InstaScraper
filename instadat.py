@@ -64,7 +64,7 @@ while (len(user) > 0):
             xpath = "//div[@style='position: relative; z-index: 1;']/div/div[2]/div/div[1]"
             WebDriverWait(driver, 1).until(
                 EC.presence_of_element_located((By.XPATH, xpath)))
-            # Finally, scrape the followers
+            #scrape the followers
             xpath = "//div[@style='position: relative; z-index: 1;']//ul/li/div/div/div/div/a"
             followers_elems = driver.find_elements_by_xpath(xpath)
             for e in followers_elems:
